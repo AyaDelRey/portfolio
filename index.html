@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marwa Chanu</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <script src="/script/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
+</head>
+<body>
+    <header id="header">
+        <div class="header-container">
+            <div class="header-left">
+                <h1 class="animate__animated animate__fadeIn">Marwa<br>Chanu</h1>
+                <!-- <div class="img-header">
+                    <img src="/img/moi.png" alt="Photo Marwa Chanu">
+                </div> -->
+                <div class="console-container">
+                    <p class="console-text"></p>
+                </div>
+            </div>
+    
+            <nav class="header-right" id="header-nav">
+                <ul>
+                    <li><a href="#" data-lang="fr">À propos de moi</a><a href="#" data-lang="en" style="display: none;">About Me</a></li>
+                    <li><a href="#" data-lang="fr">Compétences</a><a href="#" data-lang="en" style="display: none;">Skills</a></li>
+                    <li><a href="#" data-lang="fr">Formation</a><a href="#" data-lang="en" style="display: none;">Education</a></li>
+                    <li><a href="#" data-lang="fr">CV</a><a href="#" data-lang="en" style="display: none;">Resume</a></li>
+                    <li><a href="#" data-lang="fr">Projet</a><a href="#" data-lang="en" style="display: none;">Projects</a></li>
+                    <li><a href="#" data-lang="fr">Contact</a><a href="#" data-lang="en" style="display: none;">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cta-scroll">
+                <a href="#main-content" class="scroll-down">
+                    <span class="arrow-down"></span>
+                    <p>Scroll Down</p>
+                </a>
+            </div>
+    
+            <div class="language-selector">
+                <input type="checkbox" id="lang-switch" class="lang-switch" onchange="changeLanguage()">
+                <label for="lang-switch" class="switch-label">
+                    <span class="switch-text">Français</span> 
+                    <span class="switch-text">English</span>
+                </label>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation Sticky (Menu de contenu) -->
+    <nav class="sticky-nav">
+        <ul>
+            <li><a href="#" data-lang="fr">À propos de moi</a><a href="#" data-lang="en" style="display: none;">About Me</a></li>
+            <li><a href="#" data-lang="fr">Compétences</a><a href="#" data-lang="en" style="display: none;">Skills</a></li>
+            <li><a href="#" data-lang="fr">Formation</a><a href="#" data-lang="en" style="display: none;">Education</a></li>
+            <li><a href="#" data-lang="fr">CV</a><a href="#" data-lang="en" style="display: none;">Resume</a></li>
+            <li><a href="#" data-lang="fr">Projet</a><a href="#" data-lang="en" style="display: none;">Projects</a></li>
+            <li><a href="#" data-lang="fr">Contact</a><a href="#" data-lang="en" style="display: none;">Contact</a></li>
+        </ul>
+    </nav>
+    <main id="main-content">
+
+        <div class="about-section">
+            <!-- Section A propos de moi (Français) -->
+            <aside class="a-propos" data-lang="fr" style="display: none;">
+                <h2>À propos</h2>
+                <p>Après des études en sciences politiques, j'ai acquis une expérience professionnelle de deux ans dans le domaine du marketing. J'ai commencé comme assistante marketing avant de devenir responsable marketing au sein d'une start-up de location immobilière. Ce poste m'a permis de collaborer avec diverses équipes, notamment dans le développement, ce qui a éveillé mon intérêt pour l'informatique et les technologies web.</p>
+                <p>Animée par cette passion naissante, j'ai décidé de me réorienter et suis actuellement en formation professionnelle pour devenir développeuse web.</p>
+            </aside>
+            
+            <!-- Section About Me (English) -->
+            <aside class="a-propos" data-lang="en" style="display: none;">
+                <h2>About</h2>
+                <p>After studying political science, I gained two years of professional experience in marketing. I started as a marketing assistant and then became a marketing manager at a real estate start-up. This role allowed me to collaborate with various teams, particularly in development, which sparked my interest in IT and web technologies.</p>
+                <p>Driven by this growing passion, I decided to change my career path and am currently in professional training to become a web developer.</p>
+            </aside>
+            
+            <!-- Profil Image (common for both languages) -->
+            <aside class="img-profil">
+                <img src="/img/moi.png" alt="Photo Marwa Chanu">
+            </aside>
+        </div>
+        
+        <article>
+            <div class="skills-section" id="tech-skills">
+                <h2 data-lang="fr">Compétences</h2>
+                <h2 data-lang="en" style="display: none;">Skills</h2>
+        
+                <!-- Skill HTML (Français) -->
+                <div class="skill" data-lang="fr">
+                    <div class="skill-name"></div>
+                    <div class="progress-bar">
+                        <div class="progress progress-html">HTML-CSS</div>
+                    </div>
+                </div>
+                
+                <!-- Skill HTML (English) -->
+                <div class="skill" data-lang="en" style="display: none;">
+                    <div class="skill-name"></div>
+                    <div class="progress-bar">
+                        <div class="progress progress-html">HTML-CSS</div>
+                    </div>
+                </div>
+        
+                <!-- Repeat for CSS, JavaScript, Communication -->
+                <!-- Skill CSS -->
+                <div class="skill" data-lang="fr">
+                    <div class="skill-name"></div>
+                    <div class="progress-bar">
+                        <div class="progress progress-css">PHP-Symfony</div>
+                    </div>
+                </div>
+                
+                <div class="skill" data-lang="en" style="display: none;">
+                    <div class="skill-name"></div>
+                    <div class="progress-bar">
+                        <div class="progress progress-css">PHP-Symfony</div>
+                    </div>
+                </div>
+        
+                <!-- Skill JavaScript -->
+                <div class="skill" data-lang="fr">
+                    <div class="skill-name"></div>
+                    <div class="progress-bar">
+                        <div class="progress progress-js">C#-ASP.NET</div>
+                    </div>
+                </div>
+                
+                <div class="skill" data-lang="en" style="display: none;">
+                    <div class="skill-name"></div>
+                    <div class="progress-bar">
+                        <div class="progress progress-js">C#-ASP.NET</div>
+                    </div>
+                </div>
+        
+                <!-- Skill Communication -->
+                <div class="skill" data-lang="fr">
+                    <div class="skill-name"></div>
+                    <div class="progress-bar">
+                        <div class="progress progress-communication">Database-SQL</div>
+                    </div>
+                </div>
+                
+                <div class="skill" data-lang="en" style="display: none;">
+                    <div class="skill-name"></div>
+                    <div class="progress-bar">
+                        <div class="progress progress-communication">Database-SQL</div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <!-- Section Soft Skills (initialement cachée) -->
+    <div class="skills-section" id="soft-skills" style="display: none;">
+        <h2 data-lang="fr">Compétences personnelles</h2>
+        <h2 data-lang="en" style="display: none;">Soft Skills</h2>
+
+        <div class="skill" data-lang="fr">
+            <div class="skill-name">Communication</div>
+            <div class="progress-bar">
+                <div class="progress progress-communication">85%</div>
+            </div>
+        </div>
+
+        <div class="skill" data-lang="fr">
+            <div class="skill-name">Esprit d'équipe</div>
+            <div class="progress-bar">
+                <div class="progress progress-communication">100%</div>
+            </div>
+        </div>
+
+        <div class="skill" data-lang="fr">
+            <div class="skill-name">Ecoute</div>
+            <div class="progress-bar">
+                <div class="progress progress-communication">90%</div>
+            </div>
+        </div>
+
+        <div class="skill" data-lang="fr">
+            <div class="skill-name">Curiosité</div>
+            <div class="progress-bar">
+                <div class="progress progress-communication">85%</div>
+            </div>
+        </div>
+
+        <div class="skill" data-lang="en" style="display: none;">
+            <div class="skill-name">Communication</div>
+            <div class="progress-bar">
+                <div class="progress progress-communication">100%</div>
+            </div>
+        </div>
+
+        <div class="skill" data-lang="en" style="display: none;">
+            <div class="skill-name">Teamwork</div>
+            <div class="progress-bar">
+                <div class="progress progress-communication">85%</div>
+            </div>
+        </div>
+        <div class="skill" data-lang="en" style="display: none;">
+            <div class="skill-name">Adaptability</div>
+            <div class="progress-bar">
+                <div class="progress progress-communication">100%</div>
+            </div>
+        </div>
+
+        <div class="skill" data-lang="en" style="display: none;">
+            <div class="skill-name">Curiosity</div>
+            <div class="progress-bar">
+                <div class="progress progress-communication">85%</div>
+            </div>
+        </div>
+
+        <!-- Repeat for other soft skills -->
+    </div>
+        </article>
+        
+        <article>
+            <div class="education-section">
+                <h2 data-lang="fr">Formations</h2>
+                <h2 data-lang="en" style="display: none;">Education</h2>
+        
+                <!-- Education Item 1 (Français) -->
+                <div class="education-item" data-lang="fr" data-aos="fade-up">
+                    <h3>Web Application Developer (2024-2025) – Interface 3 - Bruxelles</h3>
+                    <div class="duration">2023 - 2025</div>
+                    <p>Formation professionnelle visant l’acquisition de compétences en gestion de projet web dynamique, de l’analyse des besoins à la création de l’architecture et des bases de données. Maîtrise des langages HTML/CSS, JavaScript pour le développement front-end, et SQL pour la gestion de bases de données. Développement d’applications avec des langages serveur (PHP, C#, ASP.NET) et utilisation de frameworks tels que Symfony, Angular, React. Formation également axée sur l’installation et la configuration de serveurs web (IIS, Apache).</p>
+                </div>
+        
+                <!-- Education Item 1 (English) -->
+                <div class="education-item" data-lang="en" style="display: none;" data-aos="fade-up">
+                    <h3>Web Application Developer (2024-2025) – Interface 3 - Brussels</h3>
+                    <div class="duration">2023 - 2025</div>
+                    <p>Professional training focusing on acquiring skills in dynamic web project management, from needs analysis to architecture and database creation. Mastery of HTML/CSS, JavaScript for front-end development, and SQL for database management. Application development with server-side languages (PHP, C#, ASP.NET) and use of frameworks such as Symfony, Angular, React. Training also focused on the installation and configuration of web servers (IIS, Apache).</p>
+                </div>
+
+                <div class="education-item" data-lang="fr" data-aos="fade-right">
+                    <h3>Bachelier en sciences politiques, orientation générale – ULB – Bruxelles</h3>
+                    <div class="duration">2017 - 2020</div>
+                    <p>Bachelier en sciences politiques visant à développer des connaissances des divers domaines des sciences politiques (relations internationales, études européennes, politique comparée, administration publique, théorie politique).</p>
+                </div>
+
+                <div class="education-item" data-lang="en" style="display: none;" data-aos="fade-right">
+                    <h3>Bachelor's Degree in Political Science, General Orientation – ULB – Brussels</h3>
+                    <div class="duration">2017 - 2020</div>
+                    <p>Bachelor's degree in political science aimed at developing knowledge of various domains in political science (international relations, European studies, comparative politics, public administration, political theory).</p>
+                </div>
+
+                <div class="education-item" data-lang="fr" data-aos="fade-left">
+                    <h3>Master en Sciences du Travail</h3>
+                    <div class="duration">2021 - 2022</div>
+                    <p>Formation spécialisée en organisation et gestion du travail, avec une approche pluridisciplinaire intégrant des dimensions juridiques, sociologiques, psychologiques, économiques et médicales liées au monde du travail.</p>
+                </div>
+
+                <div class="education-item" data-lang="en" style="display: none;" data-aos="fade-left">
+                    <h3>Master's in Labor Sciences</h3>
+                    <div class="duration">2021 - 2022</div>
+                    <p>Specialized training in the organization and management of labor, with a multidisciplinary approach integrating legal, sociological, psychological, economic, and medical dimensions related to the working world.</p>
+                </div>
+        
+            </div>
+        </article>
+        
+        <article>
+            <div class="container" data-aos="flip-up">
+                <h1 data-lang="fr">Mon CV</h1>
+                <h1 data-lang="en" style="display: none;">My Resume</h1>
+                <a href="/img/marwaChanuCV.pdf" target="_blank" data-lang="fr" class="button hvr-radial-out"><span>Télécharger mon CV</span></a>
+                <a href="/img/marwaChanuCV.pdf" target="_blank" data-lang="en" style="display: none;" class="button hvr-radial-out">Download my resume</a>
+            </div>
+            <div class="cv-container">
+                <embed src="/img/marwaChanuCV.pdf" width="600" height="800" type="application/pdf">
+            </div>
+        </article>
+        
+        <article>
+            <div class="projects-section" data-aos="zoom-in">
+                <h2 data-lang="fr">Projets</h2>
+                <h2 data-lang="en" style="display: none;">Projects</h2>
+                <div class="project-links">
+                    <a href="https://lien-vers-projet-1.com" class="project" target="_blank" data-lang="fr">
+                        <img src="/img/profile.png" alt="Projet 1">
+                    </a>
+                    <a href="https://lien-vers-projet-2.com" class="project" target="_blank" data-lang="fr">
+                        <img src="/img/profile.png" alt="Projet 2">
+                    </a>
+                    <a href="https://lien-vers-projet-3.com" class="project" target="_blank" data-lang="fr">
+                        <img src="/img/profile.png" alt="Projet 3">
+                    </a>
+                    <a href="https://lien-vers-projet-4.com" class="project" target="_blank" data-lang="fr">
+                        <img src="/img/profile.png" alt="Projet 4">
+                    </a>
+                    <!-- Same project links for English -->
+                    <a href="https://lien-vers-projet-1.com" class="project" target="_blank" data-lang="en" style="display: none;">
+                        <img src="/img/profile.png" alt="Project 1">
+                    </a>
+                    <a href="https://lien-vers-projet-2.com" class="project" target="_blank" data-lang="en" style="display: none;">
+                        <img src="/img/profile.png" alt="Project 2">
+                    </a>
+                    <a href="https://lien-vers-projet-3.com" class="project" target="_blank" data-lang="en" style="display: none;">
+                        <img src="/img/profile.png" alt="Project 3">
+                    </a>
+                    <a href="https://lien-vers-projet-4.com" class="project" target="_blank" data-lang="en" style="display: none;">
+                        <img src="/img/profile.png" alt="Project 4">
+                    </a>
+                </div>
+            </div>
+        </article>     
+        </div>
+
+
+    </main>
+        <footer>
+            <div class="footer-content">
+                <!-- Version en français -->
+                <h2 data-lang="fr">Contactez-moi</h2>
+                <h2 data-lang="en" style="display: none;">Contact Me</h2>
+        
+                <form action="#" method="post" class="contact-form">
+                    <input type="text" name="name" placeholder="Votre nom" required data-lang="fr">
+                    <input type="text" name="name" placeholder="Your name" required data-lang="en" style="display: none;">
+                    
+                    <input type="email" name="email" placeholder="Votre email" required data-lang="fr">
+                    <input type="email" name="email" placeholder="Your email" required data-lang="en" style="display: none;">
+                    
+                    <textarea name="message" rows="4" placeholder="Votre message" required data-lang="fr"></textarea>
+                    <textarea name="message" rows="4" placeholder="Your message" required data-lang="en" style="display: none;"></textarea>
+                    
+                    <button type="submit" data-lang="fr">Envoyer</button>
+                    <button type="submit" data-lang="en" style="display: none;">Send</button>
+                </form>
+                
+                <!-- Informations du footer (Français) -->
+                <div class="footer-info" data-lang="fr">
+                    © 2024 - Tous droits réservés | Mon CV-Portfolio
+                </div>
+                
+                <!-- Informations du footer (Anglais) -->
+                <div class="footer-info" data-lang="en" style="display: none;">
+                    © 2024 - All rights reserved | My CV-Portfolio
+                </div>
+            </div>
+    </footer>
+</body>
+</html>

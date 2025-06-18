@@ -1,0 +1,798 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    background-color: #ffffff;
+    color: #00171F; 
+    width: 100vw; /* Largeur du viewport */
+    height: 100vh; /* Hauteur du viewport */
+}
+
+h1, h2 {
+    font-family: 'Viaoda Libre', sans-serif;
+    font-weight: 300;
+    
+}
+
+
+header a {
+    color: #00171F;
+    text-decoration: none;
+}
+
+/* Style du titre */
+header h1 {
+    margin: 0; /* Supprime les marges par défaut */
+    font-size: 5rem; /* Taille du titre */
+    text-align: center;
+    padding-left: 10px;
+    position: relative;
+    /* font-family: 'Montserrat', sans-serif; */
+    
+}
+
+header h1::before {
+    content: ""; /* Crée un élément vide */
+    position: absolute;
+    top: 120%; /* Départ : sous le texte (en bas du header) */
+    left: 50%;
+    width: 320px; /* Largeur du halo */
+    height: 320px; /* Hauteur du halo */
+    background-color: rgba(189, 2, 80, 0.5);
+    border-radius: 50%; /* Forme circulaire */
+    transform: translate(-50%, -50%); /* Centrer le cercle */
+    box-shadow: 0 0 50px rgba(165, 1, 69, 0.7);
+    filter: blur(20px); /* Applique un flou */
+    z-index: -1; /* Mettre le halo derrière le texte */
+    animation: halo-rise 3s ease-out forwards; /* Animation du halo */
+}
+
+/* Animation qui fait monter le halo */
+@keyframes halo-rise {
+    0% {
+        top: 120%; /* Départ : sous le texte */
+        opacity: 0; /* Halo invisible au début */
+    }
+    50% {
+        opacity: 0.7; /* Halo devient visible pendant l'animation */
+    }
+    100% {
+        top: 50%; /* Arrivée : centré sur le texte */
+        opacity: 1; /* Halo complètement visible */
+    }
+}
+/* Style du switch de langue */
+.language-selector {
+    display: flex;
+    align-items: center;
+}
+
+/* Cacher le bouton checkbox */
+.lang-switch {
+    display: none;
+}
+
+/* Positionner le label en haut à droite */
+.switch-label {
+    position: fixed; /* Changez en "absolute" si vous voulez un positionnement relatif au parent */
+    top: 10px; /* Distance par rapport au haut de la page */
+    right: 10px; /* Distance par rapport à la droite de la page */
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background-color: #828A95;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Positionner le texte à l'intérieur du label */
+.switch-label .switch-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: white;
+    transition: opacity 0.3s;
+}
+
+.switch-label .switch-text:first-child {
+    left: 10px;
+    opacity: 1;
+}
+
+.switch-label .switch-text:last-child {
+    right: 10px;
+    opacity: 0;
+}
+
+
+/* Change la couleur du switch quand il est activé */
+.lang-switch:checked + .switch-label {
+    background-color: #003459;
+}
+
+.lang-switch:checked + .switch-label .switch-text:first-child {
+    opacity: 0;
+}
+
+.lang-switch:checked + .switch-label .switch-text:last-child {
+    opacity: 1;
+}
+
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.a-propos {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.img-profil {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-profil img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 4px 50px #89023f3b;
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .a-propos {
+        margin-bottom: 20px;
+    }
+
+    .img-profil img {
+        max-width: 200px;
+    }
+}
+
+.skills-section {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+h2 {
+    text-align: center;
+    color: #00171F; /* Bleu clair pour les titres */
+}
+
+h2::after {
+    content: "✦";  /* Ajoute une étoile après le texte */
+    font-size: 0.8em; /* Ajuste la taille de l'étoile */
+    color: #7b0134; /* Couleur rose pour l'étoile */
+    margin-left: 10px; /* Espace entre le texte et l'étoile */
+    vertical-align: middle; /* Aligne verticalement avec le texte */
+    animation: sparkle 1.5s infinite alternate;
+}
+
+/* Animation de scintillement */
+@keyframes sparkle {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+}
+
+.skill {
+    margin: 15px 0;
+}
+
+.skill-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #00171F; /* Bleu très foncé pour les textes secondaires */
+}
+
+.skills-section {
+    position: relative; /* Nécessaire pour positionner le halo par rapport à la section */
+    cursor: pointer; /* Indique que la section est cliquable */
+    transition: background-color 0.3s ease, border-radius 0.3s ease; /* Animation douce au survol */
+    z-index: 1; /* S'assurer que le contenu de la section soit au-dessus du halo */
+}
+
+.skills-section::before {
+    content: ""; /* Crée un élément vide */
+    position: absolute; /* Positionnement absolu par rapport à la section skills */
+    top: 50%; /* Centrer verticalement par rapport à la section */
+    left: 50%; /* Centrer horizontalement par rapport à la section */
+    width: 500px; /* Largeur du halo */
+    height: 300px; /* Hauteur du halo */
+    background-color: rgba(123, 1, 52, 0); /* Initialement transparent */
+    border-radius: 0%; /* Forme initiale */
+    transform: translate(-50%, -50%) scale(0.8); /* Taille initiale plus petite */
+    box-shadow: 0 0 0 rgba(123, 1, 52, 0); /* Lueur initiale invisible */
+    filter: blur(50px); /* Applique un flou au cercle lui-même */
+    z-index: -1; /* S'assurer que le halo est derrière le contenu de la section */
+    transition: all 0.5s ease; /* Animation douce pour toutes les propriétés */
+}
+
+.skills-section:hover::before {
+    background-color: rgba(123, 1, 52, 0.5); /* Couleur rose avec opacité */
+    border-radius: 50%; /* Devient circulaire */
+    box-shadow: 0 0 50px rgba(123, 1, 52, 0.7); /* Lueur floue autour du cercle */
+    transform: translate(-50%, -50%) scale(1); /* Taille normale */
+}
+
+.skills-section:hover {
+    border-radius: 50%; /* Animation douce pour la forme circulaire */
+    transition: border-radius 0.5s ease; /* Animation sur le changement de bordure */
+}
+
+
+
+
+/* Ajouter un effet de transition douce pour la visibilité des sections */
+.skills-section h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #00171F;
+}
+.progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+}
+
+/* Définir un état initial pour les barres de progression */
+.progress {
+    width: 0%; /* Initialement à 0% */
+    transition: width 1s ease-out; /* Animation pour la largeur */
+    height: 100%;
+    text-align: right;
+    line-height: 20px;
+    color: #ffffff; /* Texte blanc à l'intérieur de la barre */
+    padding-right: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+/* Couleur des barres en fonction de la compétence */
+.progress-html { background-color: #89023e; }
+.progress-css { background-color: #89023e; }
+.progress-js { background-color: #89023e; }
+.progress-communication { background-color: #89023e; }
+
+/* Lorsque la barre devient visible, appliquer le remplissage au pourcentage */
+.progress.fill-progress {
+    transition: width 1s ease-out;
+}
+
+/* Spécificité des différentes compétences pour le remplissage */
+.progress-html.fill-progress {
+    width: 100%;
+}
+
+.progress-css.fill-progress {
+    width: 100%;
+}
+
+.progress-js.fill-progress {
+    width: 100%;
+}
+
+.progress-communication.fill-progress {
+    width: 100%;
+}
+
+
+
+.education-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.education-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.education-item h3 {
+    margin: 0 0 5px;
+    font-size: 18px;
+    color: #003459;
+}
+
+.education-item .duration {
+    font-size: 14px;
+    color: #828A95; /* Couleur secondaire pour les durées */
+    margin-bottom: 10px;
+}
+
+.education-item p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.container {
+    margin: 20px;
+    text-align: center; /* Centre le contenu à l'intérieur de la section */
+}
+
+.container h1 {
+    color: #00171F;
+    margin-bottom: 20px;
+}
+
+.container a {
+    display: inline-block;
+    text-decoration: none; 
+    color: #ffffff; /* Texte bleu pour le bouton */
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid transparent; /* Pas de bordure initialement */
+    border-bottom: 2px solid #00171F; /* Bordure bleue en bas */
+    transition: all 0.3s ease;
+}
+
+.container a:hover {
+    background-color: #003459; /* Fond bleu clair au survol */
+    color: #ffffff; /* Texte blanc au survol */
+    border-color: #003459;
+}
+
+/* .container iframe {
+    width: 80%; 
+    height: 80vh; 
+    border: none;
+    display: block; 
+    margin: 0 auto; 
+} */
+.cv-container {
+    display: flex;
+    justify-content: center;  /* Centre l'image horizontalement */
+    align-items: center;      /* Centre l'image verticalement */
+    height: 100vh;            /* Utilise toute la hauteur de la fenêtre */
+    margin: 0;                /* Supprime les marges par défaut */
+}
+
+.cv-container img {
+    max-width: 90%;           /* Limite la largeur de l'image à 90% de la fenêtre */
+    max-height: 90vh;         /* Limite la hauteur de l'image à 90% de la hauteur de la fenêtre */
+    object-fit: contain;      /* Garde l'intégrité de l'image sans la déformer */
+}
+
+.projects-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px
+}
+
+.project-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.project img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project:hover {
+    transform: scale(1.1);
+    box-shadow:  0 0 50px rgba(123, 1, 52, 0.7);
+}
+
+footer {
+    background-color: rgba(123, 1, 52, 0.7);
+    color: #ffffff;
+    padding: 40px 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
+}
+
+footer h2 {
+    margin-bottom: 20px;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: #89023e;
+     /* Couleur de fond des champs de formulaire */
+    color: #ffffff;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #828A95; /* Placeholder avec la couleur secondaire */
+}
+
+.contact-form button {
+    background-color: #89023e; /* Rose vif pour le bouton */
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-family: 'Viaoda Libre', sans-serif;
+    margin-left: 10px;
+}
+
+.contact-form button:hover {
+    background-color: #7b0134; /* Rose foncé au survol */
+}
+
+.footer-info {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #828A95; /* Couleur secondaire pour le texte au bas du footer */
+}
+
+/* Définition de l'animation fade-left */
+@keyframes fadeLeft {
+    0% {
+    opacity: 0;
+    transform: translateX(-100%);
+    }
+    100% {
+    opacity: 1;
+    transform: translateX(0);
+    }
+}
+  /* Appliquer l'animation sur la section */
+.about-section {
+    opacity: 0; /* Initialement invisible */
+    animation: fadeLeft 1s ease-out forwards; /* Animation fade-left de 1 seconde */
+    visibility: hidden; /* L'élément est invisible jusqu'à ce qu'il soit activé */
+}
+  /* Lorsque la section devient visible, applique l'animation */
+.about-section.visible {
+    opacity: 1; /* Rendre l'élément visible */
+    visibility: visible; /* Assurez-vous qu'il est visible */
+    animation: fadeLeft 1s ease-out forwards; /* Animation fade-left */
+}
+
+
+    /* Couleur finale après hover */
+    .button.hvr-radial-out:active, 
+    .button.hvr-radial-out:focus, 
+    .button.hvr-radial-out:hover {
+      background-color: #003459 !important; /* Couleur finale */
+      color: #ffffff !important;
+    }
+    .button.hvr-radial-out {
+        background-color: #003459 !important; /* Couleur finale de remplissage */
+      }
+      .hvr-radial-out:before {
+        background-color: #00171F !important;
+      }
+
+      footer {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: bounce 0.5s ease forwards;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    @keyframes bounce {
+        0% {
+            transform: translateY(30px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    
+    /* Footer visible lors du scroll */
+    footer.visible {
+        opacity: 1;
+    }
+
+.img-profil img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.language-selector select {
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+/* Le main content */
+#main-content {
+    opacity: 0; /* Transparent au départ */
+    transition: opacity 1s ease-out;
+    padding: 50px 20px;
+}
+
+#main-content.show {
+    opacity: 1; /* Rendre visible après le scroll */
+}
+
+.about-section {
+    margin-bottom: 50px;
+}
+
+/* Animation de transition lorsque l'on fait défiler la page */
+body.scrolled #header {
+    opacity: 0; /* Le header devient transparent */
+    pointer-events: none; /* Empêche les interactions avec le header une fois qu'il est masqué */
+}
+
+/* Navigation sticky */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    color: #00171F;
+    border-bottom: 3px solid #7b0134;
+    z-index: 1000;
+    padding: 10px 0; /* Ajoutez du padding pour donner de l'espace */
+}
+
+.sticky-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around; /* Centrer horizontalement */
+    padding: 10px 20px; /* Padding autour des liens */
+}
+
+.sticky-nav li {
+    margin: 0 15px;
+}
+
+.sticky-nav a {
+    text-decoration: none;
+    color: #00171F;
+}
+
+.sticky-nav a:hover {
+    color: #7b0134;
+}
+
+/* Résponsivité pour mobile */
+@media (max-width: 768px) {
+    #header-nav {
+        flex-direction: row; /* Passez à une ligne si l'écran est petit */
+    }
+
+    .sticky-nav ul {
+        flex-direction: column; /* Navigation en colonne pour la sticky nav sur mobile */
+        align-items: center; /* Centrer les liens */
+    }
+
+    .sticky-nav li {
+        margin: 10px 0; /* Espacement vertical pour la nav sticky */
+    }
+}
+
+/* Style du conteneur de la CTA */
+.cta-scroll {
+    position: absolute; /* Position relative au header */
+    bottom: 20px; /* Placez-le en bas du header */
+    left: 50%; /* Centre horizontalement */
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+/* Lien de scroll */
+.scroll-down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    animation: bounce 2s infinite; /* Animation pour attirer l'attention */
+}
+
+.scroll-down:hover {
+    color: #00171F; /* Changer la couleur au survol */
+}
+
+/* Flèche vers le bas */
+.arrow-down {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: solid #7b0134;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    margin-bottom: 5px;
+    animation: bounce-arrow 1.5s infinite;
+}
+
+/* Animation pour la flèche */
+@keyframes bounce-arrow {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) rotate(45deg);
+    }
+    40% {
+        transform: translateY(10px) rotate(45deg);
+    }
+    60% {
+        transform: translateY(5px) rotate(45deg);
+    }
+}
+
+/* Animation pour le texte */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(10px);
+    }
+    60% {
+        transform: translateY(5px);
+    }
+}
+/* Style général pour le header */
+#header {
+    position: relative;
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    background-color: #003459; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    display: flex;
+    justify-content: center; /* Centrer le contenu horizontalement */
+    align-items: center; /* Centrer le contenu verticalement */
+    text-align: center; /* Centrer le texte */
+    transition: opacity 1s ease-out; /* Transition pour l'opacité */
+    z-index: 10; /* Le header est au-dessus des autres éléments */
+    
+}
+
+/* Conteneur principal du header */
+.header-container {
+    display: flex; /* Active Flexbox */
+    justify-content: space-between; /* Espace entre les deux sections */
+    align-items: center; /* Centrage vertical */
+    width: 100%; /* Prend toute la largeur */
+    height: 80%; /* Prend 80% de la hauteur du header */
+    box-sizing: border-box;
+}
+/* Style pour les liens globaux du header */
+header a {
+    color: #00171F; /* Couleur des liens */
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+/* Style pour la section de gauche (header-left) */
+.header-left {
+    width: 50%; /* Prend la moitié de la largeur */
+    display: flex;
+    flex-direction: column; /* Aligne les éléments verticalement */
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    text-align: center; /* Centrage du texte */
+}
+
+.header-left h1 {
+    font-size: 10rem; /* Agrandir le texte */
+    margin-bottom: 20px;
+}
+
+.img-profil img {
+    width: 300px; /* Taille de l'image */
+    height: 400px;
+    border-radius: 50%; /* Rendre l'image ronde */
+    object-fit: cover;
+} 
+.img-header img {     
+    width: 300px; /* Taille de l'image */
+    height: 400px;
+    border-radius: 50%; /* Rendre l'image ronde */
+    object-fit: cover;
+}
+
+/* Style pour la section de droite (header-right) */
+#header-nav {
+    width: 50%; /* Prend la moitié de la largeur */
+    display: flex;
+    flex-direction: column; /* Aligne la nav verticalement */
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+}
+
+#header-nav ul {
+    list-style-type: none; /* Supprime les puces */
+    padding: 0; /* Supprime le padding par défaut */
+    margin: 0; /* Supprime les marges par défaut */
+}
+
+#header-nav ul li {
+    margin-bottom: 10px; /* Espacement entre les éléments de la liste */
+}
+
+#header-nav ul li a {
+    text-decoration: none; /* Supprime le soulignement */
+    font-size: 1.5rem;
+    color: #ffffff; /* Couleur des liens */
+    transition: color 0.3s ease; /* Animation lors du survol */
+}
+
+#header-nav ul li a:hover {
+    color: #7b0134; /* Couleur des liens au survol */
+}
+.console-text {
+    font-size: 2.5rem;
+    white-space: nowrap; /* Pour empêcher les sauts de ligne */
+    overflow: hidden; /* Cache les parties qui débordent */
+    border-right: 2px solid #00ff00; /* Curseur simulé */
+    animation: blink 0.7s step-end infinite; /* Animation du curseur */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Effet de clignotement pour le curseur */
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: #00ff00; }
+}
